@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/Javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<style type="text/css">
+/*CSS hover滑过变色*/
+stable tr:hover {
+    background-color: #0180FE;
+    color: #fff;
+    cursor:hand;
+}
+body{ margin:0 auto; font-size:12px;}
+
+.odd { background-color: pink; }  
+.even { background-color: #cef; } 
+.c { background-color: yellow; }  
+</style>
+
+<script>
+//隔行变色
+$(function(){
+	$('tr:odd').addClass('odd');  
+	$('tr:even').addClass('even');
+	
+	//同上
+	//$("tr:nth-child(even)").addClass("even");
+	//$("tr:nth-child(odd)").addClass("odd");
+	
+	//$('tr:odd').css('background','pink');  
+	//$('tr:even').css('background','#cef');
+	
+	//滑过变色
+	$("tr").hover(
+		function(){ $(this).addClass('c');},
+		function(){ $(this).removeClass('c');}
+	);
+}); 
+</script>
+
+</head>
+<body>
+  <table class="data_list" width="80%">
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        </table></body>
+</html>
