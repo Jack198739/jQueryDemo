@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>表格隔行背景和突出显示当前行</title>
+        <script type="text/Javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+        <style type="text/css">
+            body{ margin:0 auto; font-size:12px;}
+            .data_list td{ width:100px;}
+        </style>
+
+        <script type="text/javascript">
+        /* 当鼠标移到表格上是，当前一行背景变色 */
+      $(document).ready(function(){
+            $(".data_list tr td").mouseover(function(){
+                $(this).parent().find("td").css("background-color","#d5f4fe");
+            });
+      })
+      /* 当鼠标在表格上移动时，离开的那一行背景恢复 */
+      $(document).ready(function(){ 
+            $(".data_list tr td").mouseout(function(){
+                var bgc = $(this).parent().attr("bg");
+                $(this).parent().find("td").css("background-color",bgc);
+            });
+      })
+      
+      $(document).ready(function(){ 
+            var color="#ffeab3"
+            $(".data_list tr:odd td").css("background-color",color);  //改变偶数行背景色
+            /* 把背景色保存到属性中 */
+            $(".data_list tr:odd").attr("bg",color);
+            $(".data_list tr:even").attr("bg","#fff");
+      })
+      </script>
+    </head>
+    <body>
+        <table class="data_list" width="80%">
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        <tr><td> 100 </td>  <td> 100 </td><td> 100 </td><td> 100 </td><td> 100 </td></tr>
+        </table>
+    </body>
+</html>
